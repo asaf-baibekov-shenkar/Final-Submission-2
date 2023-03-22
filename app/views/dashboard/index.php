@@ -11,11 +11,14 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
 	<link rel="stylesheet" type="text/css" href="<?= $data['css'] ?>" />
 	<link rel="stylesheet" type="text/css" href="<?= $data['css_project_button'] ?>" />
+	<link rel="stylesheet" type="text/css" href="<?= $data['css_new_project_button'] ?>" />
 	<script type="text/javascript" src="<?= $data['js'] ?>"></script>
 	<script type="text/javascript" src="<?= $data['js_project_button'] ?>"></script>
+	<script type="text/javascript" src="<?= $data['js_new_project_button'] ?>"></script>
 	<title>To Do List</title>
 </head>
 <body>
+    <?php include 'new_project_button.php' ?>
     <?php include 'project_button.php' ?>
 </body>
 </html>

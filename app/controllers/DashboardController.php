@@ -11,9 +11,11 @@ class DashboardController extends Controller {
 		try {
 			$this->view('dashboard/index', [
 				'css'                 => CSS_PATH . 'dashboard.css',
-				'css_project_button' => CSS_PATH . 'project_button.css',
+				'css_project_button'  => CSS_PATH . 'project_button.css',
+				'css_new_project_button'  => CSS_PATH . 'new_project_button.css',
 				'js'                  => JS_PATH  . 'dashboard.js',
-				'js_project_button'  => JS_PATH  . 'project_button.js'
+				'js_project_button'   => JS_PATH  . 'project_button.js',
+				'js_new_project_button'   => JS_PATH  . 'new_project_button.js'
 			]);
 		} catch (Illuminate\Database\Eloquent\ModelNotFoundException $exception) {
 			session_destroy();

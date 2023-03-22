@@ -1,7 +1,7 @@
 .project {
 	background-color: #F4D089;
-	width: 254px;
-	height: 50px;
+	width: var(--sidebar-buttons-width);
+	height: var(--sidebar-buttons-height);
 	display: flex;
 }
 

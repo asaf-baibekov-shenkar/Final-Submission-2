@@ -1,3 +1,3 @@
-<div id="new_project_button" class="project rounded">
-	<input type="text" maxlength="15" value="<?php echo "Work" ?>"" readonly />
-</div>
+<button id="new_project_button" class="rounded d-flex align-items-center justify-content-center">
+    <span>New Project</span>
+</button>

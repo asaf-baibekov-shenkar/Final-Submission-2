@@ -1,0 +1,62 @@
+.project {
+	background-color: #F4D089;
+	width: 254px;
+	height: 50px;
+	display: flex;
+}
+
+.project > .delete {
+	width: 20%;
+    border: none;
+	background-color: var(--delete-background-color);
+}
+
+.project > .delete:hover {
+    background-color: var(--delete-hover-background-color);
+}
+
+.project > .delete:active {
+    background-color: var(--delete-active-background-color);
+}
+
+.project > .edit {
+	flex: 1;
+    border: none;
+    background-color: var(--edit-background-color);
+}
+
+.project > .edit:hover {
+    background-color: var(--edit-hover-background-color);
+}
+
+.project > .edit:active {
+    background-color: var(--edit-active-background-color);
+}
+
+.project > .done {
+	flex: 1;
+    border: none;
+    background-color: var(--done-background-color);
+}
+
+.project > .done:hover {
+    background-color: var(--done-hover-background-color);
+}
+
+.project > .done:active {
+    background-color: var(--done-active-background-color);
+}
+
+.project > input {
+	width: 60%;
+	border: 0;
+	text-align: center;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 22px;
+}
+
+.project > input:focus {
+	outline: none;
+}

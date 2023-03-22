@@ -1,0 +1,15 @@
+{
+    "require": {
+        "illuminate/database": "^8.83"
+    },
+    "autoload": {
+        "classmap": [
+            "app/models"
+        ]
+    },
+    "config": {
+        "platform": {
+            "php": "7.3.33"
+        }
+    }
+}

@@ -30,10 +30,6 @@ main #new_task_button:active {
     background-color: var(--new-task-active-background-color);
 }
 
-main .tasks {
-    background-color: #13d54d;
-}
-
 main .tasks .task {
     display: flex;
     flex-direction: column;

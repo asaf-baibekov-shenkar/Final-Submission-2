@@ -17,11 +17,27 @@
     --done-hover-background-color: #5fd97f;
     --done-active-background-color: #13d54d;
     
+    --new-task-background-color: #F8CA94;
+    --new-task-hover-background-color: #f8c17f;
+    --new-task-active-background-color: #f8b96b;
+
+    --task-title-high-priority-background-color: #FF8B00;
+    --task-title-medium-priority-background-color: #FFAF4E;
+    --task-title-low-priority-background-color: #FFD8A9;
+
+    --task-description-background-color: #FEFFDF;
+
     --header-height: 95px;
     --sidebar-width: 300px;
     --sidebar-height: calc(100vh - var(--header-height));
     --sidebar-buttons-width: 250px;
     --sidebar-buttons-height: 50px;
+    
+    --task-height: 250px;
+    --task-width: 250px;
+
+    --task-title-height: calc(var(--task-height) / 5);
+
 }
 
 body {

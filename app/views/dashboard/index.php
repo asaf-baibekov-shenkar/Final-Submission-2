@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="<?= $data['css'] ?>" />
 	<link rel="stylesheet" type="text/css" href="<?= $data['css_header'] ?>" />
 	<link rel="stylesheet" type="text/css" href="<?= $data['css_sidebar'] ?>" />
+	<link rel="stylesheet" type="text/css" href="<?= $data['css_main'] ?>" />
 	<link rel="stylesheet" type="text/css" href="<?= $data['css_project_button'] ?>" />
 	<link rel="stylesheet" type="text/css" href="<?= $data['css_new_project_button'] ?>" />
 	<script type="text/javascript" src="<?= $data['js'] ?>"></script>
@@ -21,7 +22,10 @@
 	<title>To Do List</title>
 </head>
 <body>
-    <?php include 'header.php' ?>
-    <?php include 'sidebar.php' ?>
+	<?php include 'header.php' ?>
+	<div class="d-flex">
+		<?php include 'sidebar.php' ?>
+		<?php include 'main.php' ?>
+	</div>
 </body>
 </html>

@@ -13,6 +13,7 @@ class DashboardController extends Controller {
 				'css'						=> CSS_PATH . 'dashboard.css',
 				'css_header'				=> CSS_PATH . 'header.css',
 				'css_sidebar'				=> CSS_PATH . 'sidebar.css',
+				'css_main'  				=> CSS_PATH . 'main.css',
 				'css_project_button'		=> CSS_PATH . 'project_button.css',
 				'css_new_project_button' 	=> CSS_PATH . 'new_project_button.css',
 				'js'						=> JS_PATH  . 'dashboard.js',

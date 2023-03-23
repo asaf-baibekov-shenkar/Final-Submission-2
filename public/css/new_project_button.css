@@ -1,6 +1,7 @@
 #new_project_button {
 	display: flex;
 	width: var(--sidebar-buttons-width);
+	min-height: var(--sidebar-buttons-height);
 	height: var(--sidebar-buttons-height);
     border: none;
     background-color: var(--new-project-background-color);

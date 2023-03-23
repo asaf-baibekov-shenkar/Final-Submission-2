@@ -1,6 +1,7 @@
 .project {
 	background-color: #F4D089;
 	width: var(--sidebar-buttons-width);
+	min-height: var(--sidebar-buttons-height);
 	height: var(--sidebar-buttons-height);
 	display: flex;
 }

@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
 	<link rel="stylesheet" type="text/css" href="<?= $data['css'] ?>" />
 	<link rel="stylesheet" type="text/css" href="<?= $data['css_header'] ?>" />
+	<link rel="stylesheet" type="text/css" href="<?= $data['css_sidebar'] ?>" />
 	<link rel="stylesheet" type="text/css" href="<?= $data['css_project_button'] ?>" />
 	<link rel="stylesheet" type="text/css" href="<?= $data['css_new_project_button'] ?>" />
 	<script type="text/javascript" src="<?= $data['js'] ?>"></script>
@@ -21,7 +22,6 @@
 </head>
 <body>
     <?php include 'header.php' ?>
-    <?php include 'new_project_button.php' ?>
-    <?php include 'project_button.php' ?>
+    <?php include 'sidebar.php' ?>
 </body>
 </html>

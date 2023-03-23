@@ -1,0 +1,11 @@
+#sidebar {
+    background-color: var(--sidebar-background-color);
+    width: var(--sidebar-width);
+    height: var(--sidebar-height);
+}
+
+#sidebar .sidebar-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+}

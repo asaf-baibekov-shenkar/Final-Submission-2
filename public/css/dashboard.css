@@ -3,6 +3,7 @@
 :root {
     --header-background-color: #FFE794;
 	--hamburger-background-color: #D1C69E;
+    --sidebar-background-color: #FFFBEF;
 	--new-project-background-color: #D1C69E;
     --new-project-hover-background-color: #c4b98e;
     --new-project-active-background-color: #b7ac7e;
@@ -17,6 +18,12 @@
     --done-active-background-color: #13d54d;
     
     --header-height: 95px;
+    --sidebar-width: 300px;
+    --sidebar-height: calc(100vh - var(--header-height));
     --sidebar-buttons-width: 250px;
     --sidebar-buttons-height: 50px;
+}
+
+body {
+    background-color: #FFE1BD;
 }

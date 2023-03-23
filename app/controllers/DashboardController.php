@@ -3,11 +3,11 @@
 class DashboardController extends Controller {
 
 	public function index() {
-		if (!isset($_SESSION['user_id'])) {
-			session_destroy();
-			header('Location: ' . BASE_URL);
-			return;
-		}
+		// if (!isset($_SESSION['user_id'])) {
+		// 	session_destroy();
+		// 	header('Location: ' . BASE_URL);
+		// 	return;
+		// }
 		try {
 			$this->view('dashboard/index', [
 				'css'						=> CSS_PATH . 'dashboard.css',

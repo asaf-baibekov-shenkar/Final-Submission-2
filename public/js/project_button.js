@@ -32,4 +32,10 @@ $(function() {
 	$(".project > input").click(function() {
 		if (!$(this).attr("readonly")) return;
 	});
+    
+    $(".project > .delete").click(function() {
+        // let id = $(this).parent().attr("project_id");
+        // $.post("/dashboard", { id: id });
+        $(this).parent().remove();
+    });
 });

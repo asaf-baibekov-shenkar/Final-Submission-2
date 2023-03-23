@@ -31,8 +31,5 @@ $(function() {
 
 	$(".project > input").click(function() {
 		if (!$(this).attr("readonly")) return;
-		$(this).parent()
-			.find(".edit")
-			.trigger("click");
 	});
 });

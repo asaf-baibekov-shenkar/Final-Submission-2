@@ -43,3 +43,28 @@
 body {
     background-color: #FFE1BD;
 }
+
+@media (max-width: 1162px) {
+    .tasks {
+        justify-content: center;
+    }
+}
+
+@media (min-width: 645px) {
+    #hamburger-button {
+        display: none !important;
+    }
+}
+
+@media (max-width: 645px) {
+    .tasks {
+        justify-content: center;
+    }
+    #sidebar {
+        display: none !important;
+        justify-content: start !important;
+    }
+    main {
+        width: 100vw !important;
+    }
+}

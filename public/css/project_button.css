@@ -55,7 +55,6 @@
     background-color: transparent;
     cursor: pointer;
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 22px;
 }
 
 .project > input:focus {

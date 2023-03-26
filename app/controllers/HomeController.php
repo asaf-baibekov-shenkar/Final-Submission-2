@@ -20,8 +20,6 @@ class HomeController extends Controller {
 		$errors = [];
 		if (!isset($_POST['username']))
 			$errors['username'] = "username is missing";
-		if (!isset($_POST['email']))
-			$errors['email'] = "email is missing";
 		if (!isset($_POST['password']))
 			$errors['password'] = "password is missing";
 		if (!isset($_POST['is_admin']))
@@ -36,7 +34,6 @@ class HomeController extends Controller {
 			$user = User::create([
 				'session_id' => $_POST['username'],
 				'username' => $_POST['username'],
-				'email' => $_POST['email'],
 				'password' => $_POST['password'],
 				'is_admin' => filter_var($_POST['is_admin'], FILTER_VALIDATE_BOOLEAN)
 			]);
@@ -58,8 +55,8 @@ class HomeController extends Controller {
 	public function login() {
 		header('Content-Type: application/json');
 		$errors = [];
-		if (!isset($_POST['email']))
-			$errors['email'] = "email is missing";
+		if (!isset($_POST['username']))
+			$errors['username'] = "username is missing";
 		if (!isset($_POST['password']))
 			$errors['password'] = "password is missing";
 		if (!empty($errors)) {
@@ -68,7 +65,7 @@ class HomeController extends Controller {
 		}
 		try {
 			$user = User::where([
-				'email' => $_POST['email'],
+				'username' => $_POST['username'],
 				'password' => $_POST['password']
 			])->firstOrFail();
 			$user = User::findOrFail($user['user_id']);

@@ -18,8 +18,8 @@ class HomeController extends Controller {
 	public function create() {
 		header('Content-Type: application/json');
 		$errors = [];
-		if (!isset($_POST['full_name']))
-			$errors['full_name'] = "full_name is missing";
+		if (!isset($_POST['username']))
+			$errors['username'] = "username is missing";
 		if (!isset($_POST['email']))
 			$errors['email'] = "email is missing";
 		if (!isset($_POST['password']))
@@ -34,8 +34,8 @@ class HomeController extends Controller {
 		}
 		try {
 			$user = User::create([
-				'session_id' => $_POST['full_name'],
-				'full_name' => $_POST['full_name'],
+				'session_id' => $_POST['username'],
+				'username' => $_POST['username'],
 				'email' => $_POST['email'],
 				'password' => $_POST['password'],
 				'is_admin' => filter_var($_POST['is_admin'], FILTER_VALIDATE_BOOLEAN)

@@ -8,12 +8,12 @@ class User extends Eloquent {
 	protected $nullable = ['session_id'];
 	public $user_id;
 	public $session_id;
-	public $full_name;
+	public $username;
 	public $email;
 	public $password;
 	public $is_admin;
 	public $timestamps = true;
-	protected $fillable = ['session_id', 'full_name', 'email', 'password', 'is_admin'];
+	protected $fillable = ['session_id', 'username', 'email', 'password', 'is_admin'];
 	protected $hidden = ['session_id', 'password'];
 }
 

@@ -1,0 +1,69 @@
+.login {
+    width: 400px;
+    height: 400px;
+    background-color: var(--login-background-color);
+}
+
+.login .title {
+    background-color: var(--login-headers-background-color);
+    height: 15%;
+}
+
+.login .title span {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 32px;
+}
+
+.login .form-group label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    background-color: var(--login-headers-background-color);
+}
+
+.login .form-group input[type="text"],
+.login .form-group input[type="password"],
+.login .form-group input[type="text"]:focus,
+.login .form-group input[type="password"]:focus {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 0.75rem 1rem;
+    appearance: none;
+    outline: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: var(--login-input-background-color);
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px var(--login-input-background-color) inset;
+}
+
+.login .form-group input[type="submit"] {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+    appearance: none;
+    color: black;
+    background-color: var(--login-headers-background-color);
+}
+
+@media screen and (max-height: 536px), (max-width: 440px) {
+    .login {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .login .title span {
+        font-size: 24px;
+    }
+
+    .login .form-group input[type="text"],
+    .login .form-group input[type="password"],
+    .login .form-group input[type="text"]:focus,
+    .login .form-group input[type="password"]:focus {
+        padding: 0.25rem 1rem;
+    }
+}

@@ -3,22 +3,16 @@
 class HomeController extends Controller {
 
 	public function index() {
-		// try {
-			// if (isset($_SESSION['user_id'])) {
-			// 	$user = User::findOrFail($_SESSION['user_id']);
+		try {
+			if (isset($_SESSION['user_id'])) {
+				$user = User::findOrFail($_SESSION['user_id']);
 				header('Location: ' . BASE_URL . 'dashboard');
-		// 	} else {
-		// 		$this->view('home/index', [
-		// 			'js' => JS_PATH . 'home.js',
-		// 			'css' => CSS_PATH . 'home.css'
-		// 		]);
-		// 	}
-		// } catch (Illuminate\Database\Eloquent\ModelNotFoundException $exception) {
-		// 	$this->view('home/index', [
-		// 		'js' => JS_PATH . 'home.js',
-		// 		'css' => CSS_PATH . 'home.css'
-		// 	]);
-		// }
+			} else {
+				$this->sendView();
+			}
+		} catch (Illuminate\Database\Eloquent\ModelNotFoundException $exception) {
+			$this->sendView();
+		}
 	}
 
 	public function create() {
@@ -32,8 +26,8 @@ class HomeController extends Controller {
 			$errors['password'] = "password is missing";
 		if (!isset($_POST['is_admin']))
 			$errors['is_admin'] = "is_admin must be set";
-        else if (!is_bool(filter_var($_POST['is_admin'], FILTER_VALIDATE_BOOLEAN)))
-            $errors['is_admin'] = "is_admin must be a boolean";
+		else if (!is_bool(filter_var($_POST['is_admin'], FILTER_VALIDATE_BOOLEAN)))
+			$errors['is_admin'] = "is_admin must be a boolean";
 		if (!empty($errors)) {
 			echo '{ "errors": '; echo json_encode($errors); echo ' }';
 			return;
@@ -80,7 +74,7 @@ class HomeController extends Controller {
 			$user = User::findOrFail($user['user_id']);
 			$user->update(['session_id' => session_id()]);
 			$_SESSION['user_id'] = $user['user_id'];
-            echo '{ "success": '; echo json_encode($user); echo ' }';
+			echo '{ "success": '; echo json_encode($user); echo ' }';
 			header('Location: ' . BASE_URL . 'projects');
 		} catch (Illuminate\Database\Eloquent\ModelNotFoundException $exception) {
 			$errors['user'] = "user not found";
@@ -102,5 +96,14 @@ class HomeController extends Controller {
 			$errors['session_id'] = $sid;
 			echo '{ "errors": '; echo json_encode($errors); echo ' }';
 		}
+	}
+
+	private function sendView() {
+		$this->view('home/index', [
+			'css'		 => CSS_PATH . 'home/home.css',
+			'css_header' => CSS_PATH . 'home/header.css',
+			'css_main'	 => CSS_PATH . 'home/main.css',
+            'css_login'  => CSS_PATH . 'home/login.css',
+		]);
 	}
 }

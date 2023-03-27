@@ -86,7 +86,6 @@ class HomeController extends Controller {
 			$user = User::where(['session_id' => $sid])->firstOrFail();
 			$user->update(['session_id' => null]);
 			session_destroy();
-			print_r($user->toJson());
 			header('Location: ' . BASE_URL);
 		} catch (Illuminate\Database\Eloquent\ModelNotFoundException $exception) {
 			$errors['user'] = "user with session id " . $sid . " is not logged in";

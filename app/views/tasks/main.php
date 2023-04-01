@@ -1,9 +1,9 @@
-<main class="d-flex flex-column gap-3 pt-3">
+<main class="d-flex flex-column gap-3 mx-auto pt-3">
 	<div class="main-title text-center">Work</div>
-	<button id="new_task_button" class="rounded mx-5 d-flex align-items-center justify-content-center">
+	<button id="new_task_button" class="rounded d-flex align-items-center justify-content-center">
 		<span>New Task</span>
 	</button>
-	<div class="tasks d-flex align-content-start flex-wrap gap-2 h-100 mx-5 pt-2 pb-5 overflow-auto">
+	<div class="tasks d-flex align-content-start flex-wrap gap-3 h-100 pt-2 pb-5 overflow-auto">
 		<?php for ($i = 1; $i <= 10; $i++): ?>
 		<div class="task rounded">
 			<div class="task-title rounded-top d-flex align-items-center justify-content-between">

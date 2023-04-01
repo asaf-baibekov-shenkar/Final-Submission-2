@@ -48,17 +48,42 @@ header {
     background-color: var(--header-background-color);
 }
 
-@media (max-width: 1162px) {
+@media only screen and (min-width: 1104px) {
+    main {
+        width: 1064px;
+    }
     .tasks {
-        justify-content: center;
+        width: 1064px;
+        padding: 0 8px;
     }
 }
 
-@media (max-width: 645px) {
-    .tasks {
-        justify-content: center;
-    }
+@media only screen and (min-width: 830px) and (max-width: 1103px) {
     main {
-        width: 100vw !important;
+        width: 798px;
+    }
+    .tasks {
+        width: 798px;
+        padding: 0 8px;
+    }
+}
+
+@media only screen and (min-width: 564px) and (max-width: 829px) {
+    main {
+        width: 532px;
+    }
+    .tasks {
+        width: 532px;
+        padding: 0 8px;
+    }
+}
+
+@media only screen and (max-width: 563px) {
+    main {
+        width: 266px;
+    }
+    .tasks {
+        width: 266px;
+        padding: 0 8px;
     }
 }

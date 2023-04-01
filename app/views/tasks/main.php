@@ -10,7 +10,7 @@
 				<span class="ms-3">Task <?php echo $i ?></span>
 				<img class="me-2" src="<?php echo IMAGES_PATH . "task/task_completed_icon.png" ?>" alt="">
 			</div>
-			<div class="task-description rounded-bottom h-100 p-2 overflow-auto">
+			<div class="task-description rounded-bottom h-100 p-2 overflow-hidden">
 				Lorem, ipsum dolor sit osdhvaoisdfjg pijsdoivajdsiopjv lksajndfoviajdiov lskdjhvoidjvn sldivji amet consectetur adipisicing elit. Dicta dolorum consectetur odio? Repellat corporis, minus nostrum impedit nam incidunt, architecto iste hic rem porro quibusdam aspernatur nulla. Ex, eaque minima!
 			</div>
 		</div>

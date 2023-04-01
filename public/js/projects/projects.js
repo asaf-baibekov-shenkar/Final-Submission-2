@@ -1,7 +1,8 @@
 $(function() {
 	presentProjects();
     $('#new_project_button').click(function() {
-		
+        if ($('#list').find('.project[project_id=""]').length > 0) return;
+        $('#list').append(ProjectCell.generateEmptyCell());
 	});
 });
 
@@ -34,11 +35,19 @@ $(document).on('DOMNodeInserted', '.project', function () {
 			.find(".edit")
 			.removeClass("d-none");
 
-		let formData = new FormData();
-		formData.append('id', $(this).closest('.project').attr("project_id"));
-		formData.append('title', $(this).parent().find("input").val());
-		fetch(window.location.href + '/update', { method: 'POST', body: formData })
-			.then(() => fetchProjects());
+        let project_id = $(this).closest('.project').attr("project_id");
+        if (project_id == '') {
+            let formData = new FormData();
+            formData.append('title', $(this).parent().find("input").val());
+            fetch(window.location.href + '/create', { method: 'POST', body: formData })
+                .then(() => fetchProjects());
+        } else {
+            let formData = new FormData();
+            formData.append('id', project_id);
+            formData.append('title', $(this).parent().find("input").val());
+            fetch(window.location.href + '/update', { method: 'POST', body: formData })
+                .then(() => fetchProjects());
+        }
 	});
 
 	$(".project_component > input").click(function() {

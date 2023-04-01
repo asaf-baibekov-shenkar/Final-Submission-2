@@ -38,6 +38,9 @@
 
     --task-title-height: calc(var(--task-height) / 5);
 
+    --card-shadow-color: rgb(0 0 0 / 50%);
+    --card-box-shadow: 0px 1px 5px var(--card-shadow-color),
+                       0px 1px 5px var(--card-shadow-color);
 }
 
 body {

@@ -38,6 +38,33 @@ main .tasks .task {
     min-width: var(--task-width);
     width: var(--task-width);
     background-color: white;
+    box-shadow: var(--card-box-shadow);
+    animation-name: card-cancel-hover;
+    animation-duration: 0.1s;
+}
+
+main .tasks .task:hover {
+    animation-name: card-hover;
+    animation-duration: 0.2s;
+    box-shadow: none;
+}
+
+@keyframes card-hover {
+    from {
+        box-shadow: var(--card-box-shadow);
+    }
+    to {
+        box-shadow: none;
+    }
+}
+
+@keyframes card-cancel-hover {
+    from {
+        box-shadow: none;
+    }
+    to {
+        box-shadow: var(--card-box-shadow);
+    }
 }
 
 main .tasks .task .task-title {

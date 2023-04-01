@@ -17,8 +17,6 @@ class ProjectsController extends Controller {
 				'css_project_component'		=> CSS_PATH . 'projects/project_component.css',
 				'js'						=> JS_PATH  . 'projects/projects.js',
 				'js_project_cell'			=> JS_PATH  . 'projects/project_cell.js',
-				'js_project_component'		=> JS_PATH  . 'projects/project_component.js',
-				'js_new_project_button'		=> JS_PATH  . 'projects/new_project_button.js',
 				'user'						=> '{ "user": ' . $user->toJson() . ' }',
 				'projects'					=> '{ "projects": ' . $projects->toJson() . ' }'
 			]);

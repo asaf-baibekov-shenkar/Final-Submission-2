@@ -14,8 +14,6 @@
 	<link rel="stylesheet" type="text/css" href="<?= $data['css_project_component'] ?>" />
 	<script type="text/javascript" src="<?= $data['js'] ?>"></script>
 	<script type="text/javascript" src="<?= $data['js_project_cell'] ?>"></script>
-	<script type="text/javascript" src="<?= $data['js_project_component'] ?>"></script>
-	<script type="text/javascript" src="<?= $data['js_new_project_button'] ?>"></script>
 	<title>To Do List</title>
     <script>
         window.projects = <?php print_r(json_encode(json_decode($data['projects'], true)["projects"])) ?>;

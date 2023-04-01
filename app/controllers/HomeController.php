@@ -6,7 +6,7 @@ class HomeController extends Controller {
 		try {
 			if (isset($_SESSION['user_id'])) {
 				$user = User::findOrFail($_SESSION['user_id']);
-				header('Location: ' . BASE_URL . 'tasks');
+				header('Location: ' . BASE_URL . 'projects');
 			} else {
 				$this->sendView();
 			}

@@ -19,20 +19,17 @@
     --new-task-hover-background-color: #f8c17f;
     --new-task-active-background-color: #f8b96b;
 
-    --task-title-high-priority-background-color: #FF8B00;
-    --task-title-medium-priority-background-color: #FFAF4E;
-    --task-title-low-priority-background-color: #FFD8A9;
-
-    --task-description-background-color: #FEFFDF;
+    --project-description-background-color: #FFE3AB;
 
     --header-height: 95px;
-    
-    --new-task-button-height: 50px;
 
+    --new-project-button-height: 50px;
+
+    --project-component-width: 250px;
+    --project-component-height: 50px;
+    
     --card-height: 250px;
     --card-width: 250px;
-
-    --card-title-height: calc(var(--card-height) / 5);
 
     --card-shadow-color: rgb(0 0 0 / 50%);
     --card-box-shadow: 0px 1px 5px var(--card-shadow-color),
@@ -40,7 +37,7 @@
 }
 
 body {
-    background-color: #FFE1BD;
+    background-color: #FFFBEF;
 }
 
 header {
@@ -49,13 +46,13 @@ header {
 }
 
 @media (max-width: 1162px) {
-    .tasks {
+    .projects {
         justify-content: center;
     }
 }
 
 @media (max-width: 645px) {
-    .tasks {
+    .projects {
         justify-content: center;
     }
     main {

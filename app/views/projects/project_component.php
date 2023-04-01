@@ -1,4 +1,4 @@
-<div class="project rounded" project_id="">
+<div class="project_component rounded" project_id="">
 	<button class="delete rounded-start">
 		<svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path d="M5.99219 0.65625L5.33594 1.3125H3.00625H0.671875V2.64844V3.98438H10H19.3281V2.64844V1.3125H16.9938H14.6641L14.0078 0.65625L13.3516 -1.58325e-07H10H6.64844L5.99219 0.65625Z" fill="white"/>

@@ -1,9 +1,0 @@
-header {
-    height: var(--header-height);
-    background-color: var(--header-background-color);
-}
-
-header button {
-    left: 10px;
-    background-color: var(--hamburger-background-color);
-}

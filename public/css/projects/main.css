@@ -1,0 +1,90 @@
+main .main-title {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	font-size: 32px;
+}
+
+main #new_project_button {
+	display: flex;
+	min-height: var(--new-project-button-height);
+	height: var(--new-project-button-height);
+	border: none;
+	background-color: var(--new-project-background-color);
+	color: white;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 22px;
+	font-weight: 400px;
+}
+
+main #new_project_button:hover {
+	background-color: var(--new-project-hover-background-color);
+}
+
+main #new_project_button:active {
+	background-color: var(--new-project-active-background-color);
+}
+
+main .projects .project {
+	display: flex;
+	flex-direction: column;
+	min-height: var(--card-height);
+	height: var(--card-height);
+	min-width: var(--card-width);
+	width: var(--card-width);
+	background-color: white;
+	box-shadow: var(--card-box-shadow);
+	animation-name: card-cancel-hover;
+	animation-duration: 0.1s;
+}
+
+main .projects .project:hover {
+	animation-name: card-hover;
+	animation-duration: 0.2s;
+	box-shadow: none;
+}
+
+@keyframes card-hover {
+	from {
+		box-shadow: var(--card-box-shadow);
+	}
+	to {
+		box-shadow: none;
+	}
+}
+
+@keyframes card-cancel-hover {
+	from {
+		box-shadow: none;
+	}
+	to {
+		box-shadow: var(--card-box-shadow);
+	}
+}
+
+main .projects .project .project-title {
+	background-color: var(--task-title-high-priority-background-color);
+}
+
+main .projects .project .project-title span {
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+}
+
+main .projects .project .project-description {
+	background-color: var(--project-description-background-color);
+}
+
+main .projects .project .project-description div span:first-child {
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 14px;
+	font-weight: regular;
+	line-height: normal !important;
+}
+
+main .projects .project .project-description div span:last-child {
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 16px;
+	font-weight: regular;
+	line-height: normal !important;
+}

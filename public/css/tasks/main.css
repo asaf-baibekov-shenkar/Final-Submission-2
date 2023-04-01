@@ -1,6 +1,5 @@
 main {
     display: block;
-    width: calc(100vw - var(--sidebar-width));
     height: calc(100vh - var(--header-height));
 }
 
@@ -12,8 +11,8 @@ main .main-title {
 
 main #new_task_button {
 	display: flex;
-	min-height: var(--sidebar-buttons-height);
-	height: var(--sidebar-buttons-height);
+	min-height: var(--new-task-button-height);
+	height: var(--new-task-button-height);
     border: none;
     background-color: var(--new-task-background-color);
     color: black;
@@ -33,10 +32,10 @@ main #new_task_button:active {
 main .tasks .task {
     display: flex;
     flex-direction: column;
-    min-height: var(--task-height);
-    height: var(--task-height);
-    min-width: var(--task-width);
-    width: var(--task-width);
+    min-height: var(--card-height);
+    height: var(--card-height);
+    min-width: var(--card-width);
+    width: var(--card-width);
     background-color: white;
     box-shadow: var(--card-box-shadow);
     animation-name: card-cancel-hover;
@@ -68,7 +67,7 @@ main .tasks .task:hover {
 }
 
 main .tasks .task .task-title {
-    height: var(--task-title-height);
+    height: var(--card-title-height);
     background-color: var(--task-title-high-priority-background-color);
 }
 

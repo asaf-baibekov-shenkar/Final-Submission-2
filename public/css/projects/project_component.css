@@ -1,54 +1,54 @@
-.project {
+.project_component {
 	background-color: #F4D089;
 	width: var(--sidebar-buttons-width);
-	min-height: var(--sidebar-buttons-height);
-	height: var(--sidebar-buttons-height);
+	min-height: var(--project-component-height);
+	height: var(--project-component-height);
 	display: flex;
 }
 
-.project > .delete {
+.project_component > .delete {
 	width: 20%;
     border: none;
 	background-color: var(--delete-background-color);
 }
 
-.project > .delete:hover {
+.project_component > .delete:hover {
     background-color: var(--delete-hover-background-color);
 }
 
-.project > .delete:active {
+.project_component > .delete:active {
     background-color: var(--delete-active-background-color);
 }
 
-.project > .edit {
+.project_component > .edit {
 	flex: 1;
     border: none;
     background-color: var(--edit-background-color);
 }
 
-.project > .edit:hover {
+.project_component > .edit:hover {
     background-color: var(--edit-hover-background-color);
 }
 
-.project > .edit:active {
+.project_component > .edit:active {
     background-color: var(--edit-active-background-color);
 }
 
-.project > .done {
+.project_component > .done {
 	flex: 1;
     border: none;
     background-color: var(--done-background-color);
 }
 
-.project > .done:hover {
+.project_component > .done:hover {
     background-color: var(--done-hover-background-color);
 }
 
-.project > .done:active {
+.project_component > .done:active {
     background-color: var(--done-active-background-color);
 }
 
-.project > input {
+.project_component > input {
 	width: 60%;
 	border: 0;
 	text-align: center;
@@ -57,6 +57,6 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 
-.project > input:focus {
+.project_component > input:focus {
 	outline: none;
 }

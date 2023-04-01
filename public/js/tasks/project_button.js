@@ -24,7 +24,7 @@ $(function() {
 			id: $(this).parent().attr("project_id") 
 		}
 		console.log(object);
-		// $.post("/dashboard", { project: project, id: id });
+		// $.post("/tasks", { project: project, id: id });
 	});
 
 	// when clicking the input tag, if it's disabled, then it will trigger an event
@@ -47,7 +47,7 @@ $(function() {
 	
 	$(".project > .delete").click(function() {
 		// let id = $(this).parent().attr("project_id");
-		// $.post("/dashboard", { id: id });
+		// $.post("/tasks", { id: id });
 		$(this).parent().remove();
 	});
 });

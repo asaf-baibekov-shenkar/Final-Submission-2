@@ -10,7 +10,7 @@ class Project extends Eloquent {
     public $title;
     public $created_at;
     public $updated_at;
-    protected $fillable = ['user_id', 'title', 'description'];
+    protected $fillable = ['user_id', 'title'];
     protected $hidden = ['user_id'];
 }
 

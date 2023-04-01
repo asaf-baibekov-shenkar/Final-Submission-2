@@ -1,6 +1,6 @@
 main {
-    display: block;
-    height: calc(100vh - var(--header-height));
+	display: block;
+	height: calc(100vh - var(--header-height));
 }
 
 main .main-title {
@@ -78,6 +78,11 @@ main .projects .project .project-title span {
 
 main .projects .project .project-description {
 	background-color: var(--project-description-background-color);
+	cursor: pointer;
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+	-moz-user-select: none;     /* Firefox all */
+	-ms-user-select: none;      /* IE 10+ */
+	user-select: none;          /* Likely future */ 
 }
 
 main .projects .project .project-description div span:first-child {

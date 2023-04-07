@@ -77,9 +77,9 @@ $(document).on('DOMNodeInserted', '.project', function () {
 
 	$('.project .project-description, .project input').on('click', function() {
 		if ($(this).is('input') && $(this).attr('readonly') != 'readonly') return;
-		let id = $(this).closest('.project').attr('project_id');
-        if (id == '') return;
-		window.location.href = '/public/tasks?id=' + id;
+		let project_id = $(this).closest('.project').attr('project_id');
+        if (project_id == '') return;
+		window.location.href = '/public/tasks?project_id=' + project_id;
 	});
 })
 

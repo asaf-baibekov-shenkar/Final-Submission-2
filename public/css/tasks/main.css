@@ -71,7 +71,7 @@ main .tasks .task .task-title {
     background-color: var(--task-title-high-priority-background-color);
 }
 
-main .tasks .task .task-title span {
+main .tasks .task .task-title div {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 20px;
     font-weight: 400;

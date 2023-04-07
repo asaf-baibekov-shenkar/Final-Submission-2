@@ -1,19 +1,13 @@
 <main class="d-flex flex-column gap-3 mx-auto pt-3">
-	<div class="main-title text-center">Work</div>
+	<div class="main-title text-center">
+		<?php echo $data['project_name']; ?>
+	</div>
 	<button id="new_task_button" class="rounded d-flex align-items-center justify-content-center">
 		<span>New Task</span>
 	</button>
 	<div class="tasks d-flex align-content-start flex-wrap gap-3 h-100 pt-2 pb-5 overflow-auto">
-		<?php for ($i = 1; $i <= 10; $i++): ?>
-		<div class="task rounded">
-			<div class="task-title rounded-top d-flex align-items-center justify-content-between">
-				<span class="ms-3">Task <?php echo $i ?></span>
-				<img class="me-2" src="<?php echo IMAGES_PATH . "task/task_completed_icon.png" ?>" alt="task completed">
-			</div>
-			<div class="task-description rounded-bottom h-100 p-2 overflow-hidden">
-				Lorem, ipsum dolor sit osdhvaoisdfjg pijsdoivajdsiopjv lksajndfoviajdiov lskdjhvoidjvn sldivji amet consectetur adipisicing elit. Dicta dolorum consectetur odio? Repellat corporis, minus nostrum impedit nam incidunt, architecto iste hic rem porro quibusdam aspernatur nulla. Ex, eaque minima!
-			</div>
+		<div id="list" class="tasks d-flex align-content-start flex-wrap gap-2 h-100 pt-2 pb-5 overflow-auto">
+		
 		</div>
-		<?php endfor; ?>
 	</div>
 </main>

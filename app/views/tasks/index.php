@@ -12,8 +12,12 @@
 	<link rel="stylesheet" type="text/css" href="<?= $data['css'] ?>" />
 	<link rel="stylesheet" type="text/css" href="<?= $data['css_main'] ?>" />
 	<script type="text/javascript" src="<?= $data['js'] ?>"></script>
-	<script type="text/javascript" src="<?= $data['js_new_task_button'] ?>"></script>
+	<script type="text/javascript" src="<?= $data['consts'] ?>"></script>
+	<script type="text/javascript" src="<?= $data['js_project_cell'] ?>"></script>
 	<title>To Do List</title>
+	<script>
+		window.tasks = <?php print_r(json_encode(json_decode($data['tasks'], true)["tasks"])) ?>;
+	</script>
 </head>
 <body>
 	<?php include 'header.php' ?>

@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
 	<link rel="stylesheet" type="text/css" href="<?= $data['css'] ?>" />
 	<link rel="stylesheet" type="text/css" href="<?= $data['css_main'] ?>" />
+	<link rel="stylesheet" type="text/css" href="<?= $data['css_modal'] ?>" />
 	<script type="text/javascript" src="<?= $data['js'] ?>"></script>
 	<script type="text/javascript" src="<?= $data['consts'] ?>"></script>
 	<script type="text/javascript" src="<?= $data['js_project_cell'] ?>"></script>
@@ -22,5 +23,6 @@
 <body>
 	<?php include 'header.php' ?>
 	<?php include 'main.php' ?>
+	<?php include 'modal.php' ?>
 </body>
 </html>

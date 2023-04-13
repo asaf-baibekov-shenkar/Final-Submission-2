@@ -1,0 +1,44 @@
+.modal-content {
+	background-color: #FFE1BD;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#InputTaskName {
+	border: none;
+	border-bottom: 1px solid black;
+	background-color: transparent;
+	font-size: 1rem;
+	font-weight: 400;
+	height: 30px;
+	color: black;
+}
+
+#InputTaskName::placeholder,
+#InputDescription::placeholder {
+	color: black;
+}
+
+#InputDescription {
+	resize: none;
+	background-color: #7B7B7B7F;
+	border: none;
+	height: 130px;
+}
+
+#InputPriority {
+	border: none;
+}
+
+#InputTaskName,
+#InputDescription,
+#InputPriority {
+	border-radius: 0px;
+	padding: 0.25rem 0.5rem;
+}
+
+#InputTaskName:focus,
+#InputDescription:focus,
+#InputPriority:focus {
+	outline: 0;
+    box-shadow: none;
+}

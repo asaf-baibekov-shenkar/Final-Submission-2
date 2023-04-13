@@ -1,8 +1,9 @@
 $(function() {
 	presentTasks();
 	$('#new_task_button').click(function() {
-		
+		showModal(-1);
 	});
+	setupModal();
 });
 
 function presentTasks() {
@@ -12,6 +13,15 @@ function presentTasks() {
 		.forEach(cell => { $('#list').append(cell); });
 }
 $(document).on('DOMNodeInserted', '.task', function () {
+	let priority = $(this).attr('priority');
+	$(this).find('.task-title').css('background-color', function () {
+		switch (priority) {
+			case '0': return 'var(--task-title-high-priority-background-color)';
+			case '1': return 'var(--task-title-medium-priority-background-color)';
+			case '2': return 'var(--task-title-low-priority-background-color)';
+		}
+	});
+	
 	$(".task .task-title div").on('input', function () {
 		const containerWidth = $(this).width();
 		const text = $(this).text();
@@ -54,4 +64,29 @@ function fetchTasks() {
 			window.projects = JSON.parse(data).projects;
 			presentProjects($('#list'));
 		});
+}
+
+function showModal(index, taskName, taskDescription, taskType) {
+	$('#task-modal').attr('index', index);
+	$('#task-modal').on('show.bs.modal', () => {
+		$('#task-modal-title').html(index > 0 ? "Edit Task" : "New Task");
+		$(`input[name="id"]`).val(index);
+		$('#InputTaskName').val(index > 0 ? taskName : "");
+		$('#InputDescription').val(index > 0 ? taskDescription : "");
+		$('#InputAddress').val(index > 0 ? `${parseFloat(latitude).toFixed(5)}, ${parseFloat(longitude).toFixed(5)}` : "");
+		$(`input[name="type"][value="${index > 0 ? taskType : ""}"]`).prop('checked', true);
+		$('#create_btn').html(index > 0 ? "Edit" : "Create");
+	});
+	$('#task-modal').modal('show');
+} 
+
+function setupModal() {
+	$('#InputPriority').change(function() {
+		switch ($(this).val()) {
+			case '0': $('#InputPriority').css('background-color', 'var(--task-title-high-priority-background-color)');	 break;
+			case '1': $('#InputPriority').css('background-color', 'var(--task-title-medium-priority-background-color)'); break;
+			case '2': $('#InputPriority').css('background-color', 'var(--task-title-low-priority-background-color)'); 	 break;
+		}
+	});
+	$('#InputPriority').trigger('change');
 }

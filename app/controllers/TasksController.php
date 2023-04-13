@@ -23,6 +23,7 @@ class TasksController extends Controller {
 			$this->view('tasks/index', [
 				'css'						=> CSS_PATH . 'tasks/tasks.css',
 				'css_main'  				=> CSS_PATH . 'tasks/main.css',
+				'css_modal'  				=> CSS_PATH . 'tasks/modal.css',
 				'js'						=> JS_PATH  . 'tasks/tasks.js',
 				'js_project_cell'			=> JS_PATH  . 'tasks/task_cell.js',
 				'consts'					=> JS_PATH  . 'consts.js',
@@ -44,6 +45,10 @@ class TasksController extends Controller {
 			$errors['title'] = "title is missing";
 		if (!isset($_POST['description']))
 			$errors['description'] = "description is missing";
+		if (!isset($_POST['priority']))
+			$errors['priority'] = "priority is missing";
+		else if ($_POST['priority'] < 0 || $_POST['priority'] > 2)
+			$errors['priority'] = "priority must be between 0 and 2";
 		if (!isset($_POST['project_id']))
 			$errors['project_id'] = "project_id is missing";
 		if (!empty($errors)) {
@@ -143,6 +148,10 @@ class TasksController extends Controller {
 			$errors['title'] = "title is missing";
 		if (!isset($_POST['description']))
 			$errors['description'] = "description is missing";
+		if (!isset($_POST['priority']))
+			$errors['priority'] = "priority is missing";
+		else if ($_POST['priority'] < 0 || $_POST['priority'] > 2)
+			$errors['priority'] = "priority must be between 0 and 2";
 		if (!empty($errors)) {
 			echo '{ "errors": '; echo json_encode($errors); echo ' }';
 			return;

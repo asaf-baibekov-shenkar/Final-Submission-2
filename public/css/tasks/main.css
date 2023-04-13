@@ -80,6 +80,5 @@ main .tasks .task .task-title div {
 main .tasks .task .task-description {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 16px;
-    font-weight: regular;
     background-color: var(--task-description-background-color);
 }

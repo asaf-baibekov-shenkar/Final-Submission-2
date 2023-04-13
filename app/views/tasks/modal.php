@@ -6,17 +6,17 @@
 				<button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
-				<div class="input-group mb-3">
+				<div class="input-group">
 					<input type="text" class="form-control" id="InputTaskName" placeholder="Task Title" name="title" required>
 				</div>
-				<div class="input-group mb-3">
+				<div class="input-group my-3">
 					<select class="form-control form-select" id="InputPriority">
 						<option value="0" selected>High Priority</option>
 						<option value="1">Medium Priority</option>
 						<option value="2">Low Priority</option>
 					</select>
 				</div>
-				<div class="input-group mb-3">
+				<div class="input-group">
 					<textarea class="form-control" id="InputDescription" name="description" placeholder="Description"></textarea>
 				</div>
 				<div id="map_form" class="w-100"></div>

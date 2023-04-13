@@ -1,8 +1,9 @@
 <div class="modal fade" id="task-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
 	<form id="form-create-task" class="modal-dialog modal-dialog-centered" action="" method="get">
 		<div class="modal-content">
-			<div class="modal-header justify-content-center">
+			<div class="modal-header position-relative align-items-center justify-content-center">
 				<h5 class="modal-title" id="task-modal-title"></h5>
+				<button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
 				<div class="input-group mb-3">
@@ -23,7 +24,6 @@
 			</div>
 			<div class="modal-footer flex-column">
 				<button type="submit" class="btn btn-success col-12" id="create_btn">Create</button>
-				<button type="button" class="btn btn-danger col-12" data-bs-dismiss="modal">Cancel</button>
 			</div>
 		</div>
 	</form>

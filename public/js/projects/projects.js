@@ -89,5 +89,5 @@ function fetchProjects() {
 		.then(data => {
 			window.projects = JSON.parse(data).projects;
 			presentProjects($('#list'));
-		})
+		});
 }

@@ -66,15 +66,14 @@ function fetchTasks() {
 		});
 }
 
-function showModal(index, taskName, taskDescription, taskType) {
+function showModal(index, taskName, taskDescription, taskPriority) {
 	$('#task-modal').attr('index', index);
 	$('#task-modal').on('show.bs.modal', () => {
 		$('#task-modal-title').html(index > 0 ? "Edit Task" : "New Task");
 		$(`input[name="id"]`).val(index);
 		$('#InputTaskName').val(index > 0 ? taskName : "");
 		$('#InputDescription').val(index > 0 ? taskDescription : "");
-		$('#InputAddress').val(index > 0 ? `${parseFloat(latitude).toFixed(5)}, ${parseFloat(longitude).toFixed(5)}` : "");
-		$(`input[name="type"][value="${index > 0 ? taskType : ""}"]`).prop('checked', true);
+		$('#InputPriority').val(index > 0 ? taskPriority : "0");
 		$('#create_btn').html(index > 0 ? "Edit" : "Create");
 	});
 	$('#task-modal').modal('show');

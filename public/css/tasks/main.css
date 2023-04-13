@@ -46,6 +46,7 @@ main .tasks .task:hover {
     animation-name: card-hover;
     animation-duration: 0.2s;
     box-shadow: none;
+	cursor: pointer;
 }
 
 @keyframes card-hover {

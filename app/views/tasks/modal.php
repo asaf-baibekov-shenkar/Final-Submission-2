@@ -7,7 +7,7 @@
 			</div>
 			<div class="modal-body">
 				<div class="input-group">
-					<input type="text" class="form-control" id="InputTaskName" placeholder="Task Title" name="title" required>
+					<input type="text" class="form-control" id="InputTaskTitle" placeholder="Task Title" name="title" required>
 				</div>
 				<div class="input-group my-3">
 					<select class="form-control form-select" id="InputPriority">

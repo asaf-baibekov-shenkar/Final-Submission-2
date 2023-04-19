@@ -25,7 +25,7 @@ class TasksController extends Controller {
 				'css_main'  				=> CSS_PATH . 'tasks/main.css',
 				'css_modal'  				=> CSS_PATH . 'tasks/modal.css',
 				'js'						=> JS_PATH  . 'tasks/tasks.js',
-				'js_project_cell'			=> JS_PATH  . 'tasks/task_cell.js',
+				'js_task_cell'				=> JS_PATH  . 'tasks/task_cell.js',
 				'consts'					=> JS_PATH  . 'consts.js',
 				'project_name'				=> $project['title'],
 				'tasks'						=> '{ "tasks": ' . $tasks->toJson() . ' }'

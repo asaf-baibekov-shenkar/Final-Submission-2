@@ -10,9 +10,10 @@ class Task extends Eloquent {
     public $title;
     public $description;
 	public $priority;
+	public $is_done;
     public $created_at;
     public $updated_at;
-    protected $fillable = ['project_id', 'title', 'description', 'priority'];
+    protected $fillable = ['project_id', 'title', 'description', 'priority', 'is_done'];
 }
 
 ?>

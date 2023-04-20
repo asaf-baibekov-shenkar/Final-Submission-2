@@ -68,11 +68,17 @@ function calculateFontSize(text, containerWidth, minFontSize, maxFontSize) {
 }
 
 function fetchTasks() { 
-	return fetch(window.location.href + '/tasksList?project_id=' + window.project_id)
+	let project_id = window.location.href
+		.split('?')[1]
+		.split('&')
+		.find(param => param.split('=')[0] == 'project_id')
+		.split('=')[1];
+	return fetch(window.location.href.split('?')[0] + '/tasksList?project_id=' + project_id)
 		.then(response => response.text())
 		.then(data => {
-			window.projects = JSON.parse(data).projects;
-			presentProjects($('#list'));
+			window.tasks = JSON.parse(data).tasks;
+			presentTasks($('#list'));
+			return tasks;
 		});
 }
 

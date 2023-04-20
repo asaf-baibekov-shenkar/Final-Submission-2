@@ -3,6 +3,49 @@ $(function() {
 	$('#new_task_button').click(function() {
 		showModal(-1);
 	});
+	$('#create_save_btn').click(function() {
+		let task_id = $('#task-modal').attr('index');
+		let priority = parseInt($('#InputPriority').val())
+		let formData = new FormData();
+		let project_id = parseInt(window.location.href.split('?')[1].split('&').find(param => param.split('=')[0] == 'project_id').split('=')[1]);
+		formData.append('task_id', task_id);
+		formData.append('project_id', project_id);
+		formData.append('title', $('#InputTaskTitle').val());
+		formData.append('description', $('#InputDescription').val());
+		formData.append('priority', priority);
+		fetch(window.location.href.split('?')[0] + (task_id <= 0 ? '/create' : '/update'), { method: 'POST', body: formData })
+			.then(() => fetchTasks())
+			.then(tasks => {
+				window.tasks = tasks;
+				presentTasks();
+				$('#task-modal').modal('hide');
+			});
+	});
+	$('#mark_btn').click(function() {
+		let task_id = $('#task-modal').attr('index');
+		let formData = new FormData();
+		formData.append('task_id', task_id);
+		fetch(window.location.href.split('?')[0] + '/toggleDone', { method: 'POST', body: formData })
+			.then(() => fetchTasks())
+			.then(tasks => {
+				window.tasks = tasks;
+				presentTasks();
+				let task = tasks.filter(task => task.task_id == task_id)[0];
+				$('#mark_btn').html(!task.is_done ? "Mark Done" : "Mark Not Done");
+			});
+	});
+	$('#delete_btn').click(function() {
+		let task_id = $('#task-modal').attr('index');
+		let formData = new FormData();
+		formData.append('task_id', task_id);
+		fetch(window.location.href.split('?')[0] + '/remove', { method: 'POST', body: formData })
+			.then(() => fetchTasks())
+			.then(tasks => {
+				window.tasks = tasks;
+				presentTasks();
+				$('#task-modal').modal('hide');
+			});
+	});
 	setupModal();
 });
 

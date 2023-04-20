@@ -11,6 +11,13 @@ class ProjectsController extends Controller {
 		try {
 			$user = User::findOrFail($_SESSION['user_id']);
 			$projects = Project::where('user_id', $user['user_id'])->get();
+			foreach ($projects as $project) {
+				$project['high_priority_tasks'] = Task::where('project_id', $project['project_id'])->where('priority', '0')->count();
+				$project['medium_priority_tasks'] = Task::where('project_id', $project['project_id'])->where('priority', '1')->count();
+				$project['low_priority_tasks'] = Task::where('project_id', $project['project_id'])->where('priority', '2')->count();
+				$project['remaining_tasks'] = Task::where('project_id', $project['project_id'])->where('is_done', '0')->count();
+				$project['total_tasks'] = Task::where('project_id', $project['project_id'])->count();
+			}
 			$this->view('projects/index', [
 				'css'						=> CSS_PATH . 'projects/projects.css',
 				'css_main'  				=> CSS_PATH . 'projects/main.css',
@@ -73,6 +80,13 @@ class ProjectsController extends Controller {
 		try {
 			$user = User::findOrFail($_SESSION['user_id']);
 			$projects = Project::where('user_id', $user['user_id'])->get();
+			foreach ($projects as $project) {
+				$project['high_priority_tasks'] = Task::where('project_id', $project['project_id'])->where('priority', '0')->count();
+				$project['medium_priority_tasks'] = Task::where('project_id', $project['project_id'])->where('priority', '1')->count();
+				$project['low_priority_tasks'] = Task::where('project_id', $project['project_id'])->where('priority', '2')->count();
+				$project['remaining_tasks'] = Task::where('project_id', $project['project_id'])->where('is_done', '0')->count();
+				$project['total_tasks'] = Task::where('project_id', $project['project_id'])->count();
+			}
 			echo '{ "projects": ' . $projects->toJson() . ' }';
 		} catch (Illuminate\Database\Eloquent\ModelNotFoundException $exception) {
 			session_destroy();

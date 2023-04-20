@@ -35,23 +35,23 @@ class ProjectCell {
 				<div class="project-description rounded-bottom h-100 p-3 d-flex flex-column align-items-center justify-content-between">
 					<div class="d-flex flex-column align-items-center">
 						<span>High Priority</span>
-						<span>3</span>
+						<span>${this.project.high_priority_tasks}</span>
 					</div>
 					<div class="d-flex flex-column align-items-center">
 						<span>Medium Priority</span>
-						<span>4</span>
+						<span>${this.project.medium_priority_tasks}</span>
 					</div>
 					<div class="d-flex flex-column align-items-center">
 						<span>Low Priority</span>
-						<span>3</span>
+						<span>${this.project.low_priority_tasks}</span>
 					</div>
 					<div class="d-flex flex-column align-items-center">
 						<span>Remaining</span>
-						<span>7</span>
+						<span>${this.project.remaining_tasks}</span>
 					</div>
 					<div class="d-flex flex-column align-items-center">
 						<span>Total</span>
-						<span>10</span>
+						<span>${this.project.total_tasks}</span>
 					</div>
 				</div>
 			</div>

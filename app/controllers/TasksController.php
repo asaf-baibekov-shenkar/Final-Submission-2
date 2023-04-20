@@ -56,7 +56,7 @@ class TasksController extends Controller {
 			return;
 		}
 		try {
-			$project = Project::findOrFail($_GET['project_id']);
+			$project = Project::findOrFail($_POST['project_id']);
 			if ($project['user_id'] != $_SESSION['user_id']) {
 				$errors['user'] = "user not permitted to view tasks for this project";
 				echo '{ "errors": '; echo json_encode($errors); echo ' }';

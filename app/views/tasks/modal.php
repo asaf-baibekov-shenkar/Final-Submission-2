@@ -23,7 +23,9 @@
 				<input type="hidden" name="id" value="">
 			</div>
 			<div class="modal-footer flex-column">
-				<button type="submit" class="btn btn-success col-12" id="create_btn">Create</button>
+				<button type="button" class="btn btn-success col-12" id="create_save_btn">Create</button>
+				<button type="button" class="btn btn-primary col-12" id="mark_btn">Mark Done</button>
+				<button type="button" class="btn btn-danger  col-12" id="delete_btn">Delete</button>
 			</div>
 		</div>
 	</form>

@@ -183,6 +183,42 @@ class TasksController extends Controller {
 			return;
 		}	
 	}
+	
+	public function toggleDone() {
+		header('Content-Type: application/json');
+		$errors = [];
+		if (!isset($_SESSION['user_id']))
+			$errors['user'] = "user not logged in";
+		if (!isset($_POST['task_id']))
+			$errors['task_id'] = "task_id is missing";
+		if (!empty($errors)) {
+			echo '{ "errors": '; echo json_encode($errors); echo ' }';
+			return;
+		}
+		try {
+			$task = Task::findOrFail($_POST['task_id']);
+			try {
+				$project = Project::findOrFail($task['project_id']);
+				if ($project['user_id'] != $_SESSION['user_id']) {
+					$errors['user'] = "user not permitted to update this task";
+					echo '{ "errors": '; echo json_encode($errors); echo ' }';
+					return;
+				}
+				$task->update([
+					'is_done' => !$task['is_done']
+				]);
+				echo '{ "task": '; echo $task; echo ' }';
+			} catch (Illuminate\Database\Eloquent\ModelNotFoundException $exception) {
+				$errors['project'] = "project not found";
+				echo '{ "errors": '; echo json_encode($errors); echo ' }';
+				return;
+			}
+		} catch (Illuminate\Database\Eloquent\ModelNotFoundException $exception) {
+			$errors['task'] = "task not found";
+			echo '{ "errors": '; echo json_encode($errors); echo ' }';
+			return;
+		}
+	}
 
 	public function remove() {
 		header('Content-Type: application/json');

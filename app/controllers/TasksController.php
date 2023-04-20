@@ -68,7 +68,8 @@ class TasksController extends Controller {
 				echo Task::create([
 					'project_id' => $project['project_id'],
 					'title' => $_POST['title'],
-					'description' => $_POST['description']
+					'description' => $_POST['description'],
+					'priority' => $_POST['priority']
 				]);
 				echo '}';
 			} catch (Illuminate\Database\Eloquent\ModelNotFoundException $exception) {
@@ -167,7 +168,8 @@ class TasksController extends Controller {
 				}
 				$task->update([
 					'title' => $_POST['title'],
-					'description' => $_POST['description']
+					'description' => $_POST['description'],
+					'priority' => $_POST['priority']
 				]);
 				echo '{ "task": '; echo $task; echo ' }';
 			} catch (Illuminate\Database\Eloquent\ModelNotFoundException $exception) {

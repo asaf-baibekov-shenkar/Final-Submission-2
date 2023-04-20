@@ -135,6 +135,10 @@ class ProjectsController extends Controller {
 			$user = User::findOrFail($_SESSION['user_id']);
 			try {
 				$project = Project::where('user_id', $user['user_id'])->findOrFail($_POST['id']);
+				$tasks = Task::where('project_id', $_POST['id'])->get();
+				foreach ($tasks as $task) {
+					$task->delete();
+				}
 				$project->delete();
 				echo '{ "project": '; print_r($project->toJson()); echo ' }';
 			} catch (Illuminate\Database\Eloquent\ModelNotFoundException $exception) {

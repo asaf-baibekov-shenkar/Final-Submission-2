@@ -36,6 +36,16 @@ $(document).on('DOMNodeInserted', '.task', function () {
 	});
 
 	$(".task .task-title div").trigger('input');
+
+	$(this).click(function () {
+		let index = $(this).attr('task_id');
+		let task = tasks.filter(task => task.task_id == index)[0]
+		let taskTitle = task.title;
+		let taskDescription = task.description;
+		let taskPriority = task.priority;
+		let taskIsDone = task.is_done;
+		showModal(index, taskTitle, taskDescription, taskPriority, taskIsDone);
+	});
 });
 
 function calculateFontSize(text, containerWidth, minFontSize, maxFontSize) {
@@ -66,15 +76,19 @@ function fetchTasks() {
 		});
 }
 
-function showModal(index, taskName, taskDescription, taskPriority) {
-	$('#task-modal').attr('index', index);
+function showModal(task_id, taskName, taskDescription, taskPriority, taskIsDone) {
+	$('#task-modal').attr('index', task_id);
 	$('#task-modal').on('show.bs.modal', () => {
-		$('#task-modal-title').html(index > 0 ? "Edit Task" : "New Task");
-		$(`input[name="id"]`).val(index);
-		$('#InputTaskName').val(index > 0 ? taskName : "");
-		$('#InputDescription').val(index > 0 ? taskDescription : "");
-		$('#InputPriority').val(index > 0 ? taskPriority : "0");
-		$('#create_btn').html(index > 0 ? "Edit" : "Create");
+		$('#task-modal-title').html(task_id > 0 ? "Edit Task" : "New Task");
+		$(`input[name="id"]`).val(task_id);
+		$('#InputTaskTitle').val(task_id > 0 ? taskName : "");
+		$('#InputDescription').val(task_id > 0 ? taskDescription : "");
+		$('#InputPriority').val(task_id > 0 ? taskPriority : "0");
+		$('#create_save_btn').html(task_id > 0 ? "Save" : "Create");
+		$('#mark_btn').toggleClass('d-none', task_id < 0);
+		$('#mark_btn').html(!taskIsDone ? "Mark Done" : "Mark Not Done");
+		$('#delete_btn').toggleClass('d-none', task_id < 0);
+		setupModal();
 	});
 	$('#task-modal').modal('show');
 } 

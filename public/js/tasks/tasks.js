@@ -31,7 +31,7 @@ $(function() {
 				window.tasks = tasks;
 				presentTasks();
 				let task = tasks.filter(task => task.task_id == task_id)[0];
-				$('#mark_btn').html(!task.is_done ? "Mark Done" : "Mark Not Done");
+				$('#mark_btn').html(task.is_done == '0' ? "Mark Done" : "Mark Not Done");
 			});
 	});
 	$('#delete_btn').click(function() {
@@ -135,7 +135,7 @@ function showModal(task_id, taskName, taskDescription, taskPriority, taskIsDone)
 		$('#InputPriority').val(task_id > 0 ? taskPriority : "0");
 		$('#create_save_btn').html(task_id > 0 ? "Save" : "Create");
 		$('#mark_btn').toggleClass('d-none', task_id < 0);
-		$('#mark_btn').html(!taskIsDone ? "Mark Done" : "Mark Not Done");
+		$('#mark_btn').html(taskIsDone == '0' ? "Mark Done" : "Mark Not Done");
 		$('#delete_btn').toggleClass('d-none', task_id < 0);
 		setupModal();
 	});

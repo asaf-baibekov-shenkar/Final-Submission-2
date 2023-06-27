@@ -79,7 +79,7 @@ $(document).on('DOMNodeInserted', '.project', function () {
 		if ($(this).is('input') && $(this).attr('readonly') != 'readonly') return;
 		let project_id = $(this).closest('.project').attr('project_id');
         if (project_id == '') return;
-		window.location.href = '/public/tasks?project_id=' + project_id;
+		window.location.href = window.location.href.split('/public')[0] + '/public/tasks?project_id=' + project_id;
 	});
 })
 

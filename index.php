@@ -5,6 +5,6 @@
 		$uri = 'http://';
 	}
 	$uri .= $_SERVER['HTTP_HOST'];
-	header('Location: '.$uri.'/public');
+	header('Location: '.$uri.'/students/2022-2023/web1/dev_233/public');
 	exit;
 ?>

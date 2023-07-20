@@ -18,6 +18,7 @@
 	<title>To Do List</title>
 	<script>
 		window.tasks = <?php print_r(json_encode(json_decode($data['tasks'], true)["tasks"])) ?>;
+		window.tasks = window.tasks.sort((a, b) => a.is_done - b.is_done)
 	</script>
 </head>
 <body>

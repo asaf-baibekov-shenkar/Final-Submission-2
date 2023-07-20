@@ -120,6 +120,7 @@ function fetchTasks() {
 		.then(response => response.text())
 		.then(data => {
 			window.tasks = JSON.parse(data).tasks;
+			window.tasks.sort((a, b) => a.is_done - b.is_done)
 			presentTasks($('#list'));
 			return tasks;
 		});
